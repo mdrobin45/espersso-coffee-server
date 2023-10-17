@@ -57,6 +57,3 @@ const connect = async () => {
 
 // Run main function
 connect();
-
-// Export module
-module.exports = router;

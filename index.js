@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const router = require("./router/coffee");
 const { MongoClient } = require("mongodb");
 const getAllCoffee = require("./router/httpRequestMethods/getAllCoffee");
 const getOneCoffee = require("./router/httpRequestMethods/getOneCoffee");
