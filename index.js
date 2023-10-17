@@ -10,10 +10,6 @@ app.use(cors());
 app.use(express.json());
 
 // application router
-app.get("/", (req, res) => {
-   res.send("CoffeeServer is running");
-});
-app.use("/coffee", router);
 
 // Cloud uri
 const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
@@ -31,3 +27,8 @@ client.connect((err) => {
       console.log(`Server is running on ${port}`);
    });
 });
+
+app.get("/", (req, res) => {
+   res.send("CoffeeServer is running");
+});
+app.use("/coffee", router);
