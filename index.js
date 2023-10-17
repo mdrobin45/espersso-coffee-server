@@ -20,14 +20,17 @@ app.get("/", (req, res) => {
 });
 app.use("/coffee", router);
 
-client.connect((err) => {
-   if (err) {
-      console.log(err);
-      return false;
-   }
+const run = async () => {
+   await client.connect((err) => {
+      if (err) {
+         console.log(err);
+         return false;
+      }
 
-   // Server listen
-   app.listen(port, () => {
-      console.log(`Server is running on ${port}`);
+      // Server listen
+      app.listen(port, () => {
+         console.log(`Server is running on ${port}`);
+      });
    });
-});
+};
+run();
