@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 // Cloud uri
-const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://coffee-shop:iBTCWd03PNorpC6o@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(mongoUri);
 
