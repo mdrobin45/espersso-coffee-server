@@ -19,7 +19,7 @@ const client = new MongoClient(mongoUri);
 const connect = async () => {
    // Make connection with mongo Cluster
    try {
-      // await client.connect();
+      await client.connect();
       console.log("Database connection successful!");
    } catch (error) {
       console.error("Cannot establish database connection: ", error);

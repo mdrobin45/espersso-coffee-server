@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const router = require("./router/coffee");
+const { MongoClient } = require("mongodb");
 const port = process.env.PORT || 3000;
 const app = express();
 
@@ -13,6 +14,11 @@ app.get("/", (req, res) => {
    res.send("CoffeeServer is running");
 });
 app.use("/coffee", router);
+
+// Cloud uri
+// const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
+
+// const client = new MongoClient(mongoUri);
 
 // Server listen
 app.listen(port, () => {
