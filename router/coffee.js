@@ -14,7 +14,7 @@ const router = express.Router();
 // const uri =
 //    "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.3";
 
-// const client = new MongoClient(mongoUri);
+const client = new MongoClient(mongoUri);
 
 const connect = async () => {
    // Make connection with mongo Cluster
