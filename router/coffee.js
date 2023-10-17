@@ -7,23 +7,23 @@ const deleteOneCoffee = require("./httpRequestMethods/deleteOneCoffee");
 const updateOneCoffee = require("./httpRequestMethods/updateOneCoffee");
 const router = express.Router();
 
-// Cloud uri
-const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
+// // Cloud uri
+// const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
 
-// Local uri
-const uri =
-   "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.3";
+// // Local uri
+// const uri =
+//    "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.3";
 
-const client = new MongoClient(mongoUri);
+// const client = new MongoClient(mongoUri);
 
 const connect = async () => {
    // Make connection with mongo Cluster
-   try {
-      await client.connect();
-      console.log("Database connection successful!");
-   } catch (error) {
-      console.error("Cannot establish database connection: ", error);
-   }
+   // try {
+   //    await client.connect();
+   //    console.log("Database connection successful!");
+   // } catch (error) {
+   //    console.error("Cannot establish database connection: ", error);
+   // }
 
    // Create database and collection
    const databaseName = client.db("espresso-coffee");

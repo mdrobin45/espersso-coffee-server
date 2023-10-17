@@ -16,11 +16,18 @@ app.get("/", (req, res) => {
 app.use("/coffee", router);
 
 // Cloud uri
-// const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
+const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ywsqr.mongodb.net/?retryWrites=true&w=majority`;
 
-// const client = new MongoClient(mongoUri);
+const client = new MongoClient(mongoUri);
 
-// Server listen
-app.listen(port, () => {
-   console.log(`Server is running on ${port}`);
+client.connect((err) => {
+   if (err) {
+      console.log(err);
+      return false;
+   }
+
+   // Server listen
+   app.listen(port, () => {
+      console.log(`Server is running on ${port}`);
+   });
 });
